@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  UIViewProgrammaticallyDemo
 //
-//  Created by 4Axis_Admin on 11/18/18.
+//  Created by Piranavaruban on 11/18/18.
 //  Copyright © 2018 com.npruban.tutorials. All rights reserved.
 //
 
@@ -12,10 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var navigationController: UINavigationController?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+       window = UIWindow(frame: UIScreen.main.bounds)
+//
+        if let window = window {
+            let mainVC = ViewController()
+            navigationController = UINavigationController(rootViewController: mainVC)
+           // navigationController?.isToolbarHidden = true
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
+        }
+
         return true
     }
 
